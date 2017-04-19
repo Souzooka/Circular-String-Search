@@ -15,9 +15,9 @@
 
 function circularStringSearch(circularStr, searchStr) {
   const maxIndex = circularStr.length - 1;
-  let circularIndex = 0;
+  let circularIterator = 0;
+  let searchIterator = 0;
   let currentCircularIndex = 0;
-  let currentSearchIndex = 0;
 
   // Ignore capitalization
   circularStr = circularStr.toLowerCase();
@@ -33,17 +33,17 @@ function circularStringSearch(circularStr, searchStr) {
     if (currentCircularIndex === -1) {
       return false;
     } else {
-      circularIndex = currentCircularIndex;
+      circularIterator = currentCircularIndex;
       while (true) {
-        ++circularIndex;
-        ++currentSearchIndex;
-        if (circularIndex > maxIndex) {
-          circularIndex = 0;
+        ++circularIterator;
+        ++searchIterator;
+        if (circularIterator > maxIndex) {
+          circularIterator = 0;
         }
-        if (searchStr[currentSearchIndex] === undefined) {
+        if (searchStr[searchIterator] === undefined) {
           return true;
         }
-        if (circularStr[circularIndex] !== searchStr[currentSearchIndex]) {
+        if (circularStr[circularIterator] !== searchStr[searchIterator]) {
           currentSearchIndex = 0;
           break;
         }
