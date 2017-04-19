@@ -13,7 +13,7 @@
   * False -- Any other cases.
   */
 
-function circularStringSearch(circularStr, searchStr) {
+function infiniteCircularStringSearch(circularStr, searchStr) {
   const maxIndex = circularStr.length - 1;
   let circularIterator = 0;
   let searchIterator = 0;
@@ -50,6 +50,14 @@ function circularStringSearch(circularStr, searchStr) {
       }
     }
   }
+}
+
+function circularStringSearch(circularStr, searchStr) {
+  const strLength = circularStr.length;
+  while (circularStr.length < (searchStr.length + strLength)) {
+    circularStr += circularStr;
+  }
+  return circularStr.indexOf(searchStr) > -1;
 }
 
 module.exports = circularStringSearch;
