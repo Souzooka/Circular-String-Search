@@ -1,0 +1,27 @@
+{
+  "name": "Circular-String-Search",
+  "version": "1.0.0",
+  "description": "Write an algorithm that takes in 2 strings as parameters (source, find). Your function should return true if the string passed in as the find parameter is found in the source parameter if source were circular in nature. Meaning there is no end to the source string. Important: A match would be true if the word to find is partially at the end of the word and at the beginning in sequence. Ex.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Souzooka/Circular-String-Search.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Souzooka/Circular-String-Search/issues"
+  },
+  "homepage": "https://github.com/Souzooka/Circular-String-Search#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
