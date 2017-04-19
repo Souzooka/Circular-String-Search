@@ -19,6 +19,10 @@ function circularStringSearch(circularStr, searchStr) {
   let currentCircularIndex = 0;
   let currentSearchIndex = 0;
 
+  // Ignore capitalization
+  circularStr = circularStr.toLowerCase();
+  searchStr = searchStr.toLowerCase();
+
   // if an empty string is passed into search, return true
   if (searchStr.length === 0) {
     return true;
