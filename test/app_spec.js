@@ -19,4 +19,8 @@ describe('Circular String Search', function() {
     expect(search('hotdog', 'doghotdoghot')).to.be.equal(true);
     expect(search('hotdog', 'doghotdoghat')).to.be.equal(false);
   });
+
+  it('should return true with an empty search string', function() {
+    expect(search('hotdog', '')).to.be.equal(true);
+  });
 });
