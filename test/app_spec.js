@@ -1,7 +1,7 @@
 var chai = require('chai');
 var expect = chai.expect;
 
-var circular = require('../app.js');
+var search = require('../app.js');
 
 describe('Circular String Search', function() {
 

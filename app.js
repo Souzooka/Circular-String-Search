@@ -14,6 +14,38 @@
   */
 
 function circularStringSearch(circularStr, searchStr) {
-  return true;
+  const maxIndex = circularStr.length - 1;
+  let circularIndex = 0;
+  let currentCircularIndex = 0;
+  let currentSearchIndex = 0;
+
+  // if an empty string is passed into search, return true
+  if (searchStr.length === 0) {
+    return true;
+  }
+
+  while (true) {
+    currentCircularIndex = circularStr.indexOf(searchStr[0], currentCircularIndex+1);
+    if (currentCircularIndex === -1) {
+      return false;
+    } else {
+      circularIndex = currentCircularIndex;
+      while (true) {
+        ++circularIndex;
+        ++currentSearchIndex;
+        if (circularIndex > maxIndex) {
+          circularIndex = 0;
+        }
+        if (searchStr[currentSearchIndex] === undefined) {
+          return true;
+        }
+        if (circularStr[circularIndex] !== searchStr[currentSearchIndex]) {
+          currentSearchIndex = 0;
+          break;
+        }
+      }
+    }
+  }
 }
+
 module.exports = circularStringSearch;
